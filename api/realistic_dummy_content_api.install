@@ -20,3 +20,13 @@ function realistic_dummy_content_api_uninstall() {
   // happens correctly.
   Framework::instance()->variableDel('realistic_dummy_content_api_rand');
 }
+
+/**
+ * Add fruit to the default configuration for example.module.
+ */
+function realistic_dummy_content_api_update_8001() {
+  $config_factory = \Drupal::configFactory();
+  $config = $config_factory->getEditable('realistic_dummy_content_api');
+  $config->set('realistic_dummy_content_api_rand', 1);
+  $config->save(TRUE);
+}
