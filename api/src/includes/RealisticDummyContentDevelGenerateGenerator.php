@@ -17,7 +17,7 @@ class RealisticDummyContentDevelGenerateGenerator extends RealisticDummyContentG
     $info['kill'] = $this->getKill();
     $info['num'] = $this->getNum();
 
-    if (module_exists('comment')) {
+    if (Framework::instance()->moduleExists('comment')) {
       $info['max_comments'] = 5;
     }
 
