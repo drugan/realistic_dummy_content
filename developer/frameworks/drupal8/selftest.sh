@@ -11,8 +11,7 @@ set -e
 # It is a bit of a convoluted process...
 ./exec.sh drupal8 'drush eval "\Drupal::entityManager()->getStorage('field_config')->load('node.article.comment')->delete();"'
 ./exec.sh drupal8 'drush cron'
-./exec.sh drupal8 'drush -y pm-uninstall comment && \
-drush generate-realistic'
+./exec.sh drupal8 'drush -y pm-uninstall comment && drush generate-realistic'
 
 ./exec.sh drupal8 'drush -y pm-uninstall realistic_dummy_content'
 ./exec.sh drupal8 'drush -y pm-uninstall realistic_dummy_content_api'
